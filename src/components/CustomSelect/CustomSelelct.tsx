@@ -1,7 +1,22 @@
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { useCurrenciesContext } from "../../context/CurrencyContext/CurrencyContext";
 
 export const CustomSelelct = () => {
-  const { currencies } = useCurrenciesContext();
-  return <Select options={currencies} isSearchable={false} isMulti={false} />;
+  const { currencies, currentCurrency, setNewCurrency } = useCurrenciesContext();
+
+  const handelSelect = (option: SingleValue<typeof currentCurrency>) => {
+    if (option) {
+      setNewCurrency(option);
+    }
+  };
+
+  return (
+    <Select
+      options={currencies}
+      isSearchable={false}
+      isMulti={false}
+      value={currentCurrency}
+      onChange={handelSelect}
+    />
+  );
 };

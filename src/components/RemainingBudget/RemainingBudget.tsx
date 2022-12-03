@@ -1,8 +1,12 @@
 import { useCurrenciesContext } from "context/CurrencyContext/CurrencyContext";
-import { StyledRemainingBudget } from "./styles";
+import { RemainingBudgetInfo, StyledRemainingBudget } from "./styles";
 
 export const RemainingBudget = () => {
   const { currentCurrency } = useCurrenciesContext();
 
-  return <StyledRemainingBudget>Remeining:2000{currentCurrency.value}</StyledRemainingBudget>;
+  return (
+    <StyledRemainingBudget>
+      <RemainingBudgetInfo>Remeining: 2000{currentCurrency.value}</RemainingBudgetInfo>
+    </StyledRemainingBudget>
+  );
 };

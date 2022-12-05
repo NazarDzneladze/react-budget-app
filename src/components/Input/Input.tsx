@@ -9,13 +9,7 @@ interface IProps {
   $editBudget?: boolean;
 }
 
-export const Input = ({
-  placeholder,
-  onChange,
-  value,
-  type = "text",
-  $editBudget = false,
-}: IProps) => {
+export const Input = ({ placeholder, onChange, value, type = "text", $editBudget }: IProps) => {
   return (
     <StyledInput
       placeholder={placeholder}

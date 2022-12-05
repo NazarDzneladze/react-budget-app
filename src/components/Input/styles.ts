@@ -8,6 +8,13 @@ interface IProps {
 const StyledInput = styled.input<IProps>`
   max-height: 50px;
   padding-left: 20px;
+  height: 50px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   border: none;
@@ -16,6 +23,10 @@ const StyledInput = styled.input<IProps>`
   ::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     display: none;
+  }
+
+  ::placeholder {
+    color: #999999;
   }
 
   ${({ $editBudget }) =>

@@ -1,3 +1,4 @@
 import { CurrencyContextProvider } from "./CurrencyContext";
+import { AppContext } from "./AppContext/AppContext";
 
-export { CurrencyContextProvider };
+export { CurrencyContextProvider, AppContext };

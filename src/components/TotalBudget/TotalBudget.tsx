@@ -16,6 +16,7 @@ export const TotalBudget = () => {
     if (isEditBudget) {
       setIsEditBudget((isEditBudget) => !isEditBudget);
       setNewBudget(+currentBudget.value);
+      console.log(budget);
     } else {
       setIsEditBudget((isEditBudget) => !isEditBudget);
     }
@@ -26,7 +27,7 @@ export const TotalBudget = () => {
       {isEditBudget ? (
         <>
           <Input {...currentBudget} placeholder="Enter  budget ..." type="number" $editBudget />
-          <Button handleIsEditBudget={handleIsEditBudget} $budget>
+          <Button onClick={handleIsEditBudget}>
             Save
           </Button>
         </>
@@ -36,7 +37,7 @@ export const TotalBudget = () => {
             Budget: {budget}
             {currentCurrency.value}
           </TotalBudgetInfo>
-          <Button handleIsEditBudget={handleIsEditBudget} $budget>
+          <Button onClick={handleIsEditBudget}>
             Edit
           </Button>
         </>

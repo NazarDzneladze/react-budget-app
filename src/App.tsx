@@ -1,11 +1,14 @@
-import React from "react";
-import { Badge } from "components/Badge/Badge";
-import { CustomSelelct } from "./components/CustomSelect/CustomSelelct";
+import { Budget } from "components/Budget/Budget";
+import { Expenses } from "components/Expenses/Expenses";
+import { Form } from "components/Form/Form";
+import { StyledApp } from "styles";
 
 export const App = () => {
   return (
-    <div>
-      <CustomSelelct />
-    </div>
+    <StyledApp>
+      <Budget />
+      <Expenses />
+      <Form />
+    </StyledApp>
   );
 };

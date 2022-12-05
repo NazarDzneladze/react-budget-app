@@ -14,7 +14,6 @@ const getExpenseNameValidation = () => {
 
 const getExpenseCostValidation = () => {
   return {
-    valueAsNumber: true,
     required: "Please enter expense cost",
     maxLength: {
       value: 5,

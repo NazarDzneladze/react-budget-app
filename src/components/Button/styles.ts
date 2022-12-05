@@ -2,24 +2,37 @@ import styled from "styled-components";
 import { css } from "styled-components";
 
 interface IProps {
-  $budget?: boolean;
+  $formButton?: boolean;
 }
 
 const StyledButton = styled.button<IProps>`
-  ${({ $budget }) =>
-    $budget &&
+  padding: 10px 25px 10px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+
+  ${({ $formButton }) =>
+    $formButton &&
     css`
-      padding: 10px 25px 10px;
+      padding: 15px;
 
       font-family: "Inter";
       font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 17px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
 
-      background-color: white;
-      border: none;
+      color: #ffffff;
+      background-color: #23c9ff;
       border-radius: 10px;
+      border: none;
     `}
 `;
 

@@ -3,13 +3,13 @@ import { StyledButton } from "./styles";
 
 interface IProps {
   children: ReactNode;
-  handleIsEditBudget?: () => void;
-  $budget?: boolean;
+  onClick?: () => void;
+  $formButton?: boolean;
 }
 
-export const Button = ({ children, handleIsEditBudget, $budget = false }: IProps) => {
+export const Button = ({ children, onClick, $formButton }: IProps) => {
   return (
-    <StyledButton onClick={handleIsEditBudget} $budget={$budget}>
+    <StyledButton onClick={onClick} $formButton={$formButton}>
       {children}
     </StyledButton>
   );

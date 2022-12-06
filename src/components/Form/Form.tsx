@@ -4,6 +4,8 @@ import { Input } from "components/Input/Input";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { Button } from "components/Button/Button";
 import { getExpenseCostValidation, getExpenseNameValidation } from "./validation";
+import { useExpensesContext } from "context/ExpensesContext/ExpensesContext";
+import { v4 as uuidv4 } from "uuid";
 
 export interface IFormProps {
   expenseName: string;
@@ -16,9 +18,10 @@ export const Form = () => {
     control,
     formState: { errors },
   } = useForm<IFormProps>();
+  const { addNewExpense } = useExpensesContext();
 
   const onSubmit: SubmitHandler<IFormProps> = (data) => {
-    console.table(data);
+    addNewExpense({ expenseName: data.expenseName, expenseCost: +data.expenseCost, id: uuidv4() });
   };
 
   return (

@@ -3,6 +3,7 @@ import { css } from "styled-components";
 
 interface IProps {
   $formButton?: boolean;
+  $deleteExpense?: boolean;
 }
 
 const StyledButton = styled.button<IProps>`
@@ -33,6 +34,14 @@ const StyledButton = styled.button<IProps>`
       background-color: #23c9ff;
       border-radius: 10px;
       border: none;
+    `}
+
+  ${({ $deleteExpense }) =>
+    $deleteExpense &&
+    css`
+      padding: 0;
+
+      color: #c884a6;
     `}
 `;
 

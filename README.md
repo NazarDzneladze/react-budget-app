@@ -40,8 +40,6 @@ This project was created for educational purposes only. This app will help you o
 
 The **Remaining** and **Spent so far** badges are calculated automatically. The fields for adding expense have validation.
 
-Кнопка подсчета(**Ohhhoooo 🍻**) не будет доступна для нажатия до тех пор, пока не будут введены данные в строки **_`Enter bill`_** и **_`Enter persons`_**.
-
 ### Built with
 
 - [React](https://reactjs.org)

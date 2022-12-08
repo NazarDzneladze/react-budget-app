@@ -1,14 +1,23 @@
-import { useExpensesContext } from "context/ExpensesContext/ExpensesContext";
-import { ExpensesItem } from "components/ExpensesItem/ExpensesItem";
+import { ExpensesItem } from "components";
+import { useExpensesContext } from "context";
+import { IExpense } from "context/ExpensesContext/types";
 import { StyledExpensesList } from "./styles";
 
-export const ExpensesList = () => {
-  const { expenses, deleteExpense } = useExpensesContext();
+interface IProps {
+  expenses: IExpense[];
+}
+
+export const ExpensesList = ({ expenses }: IProps) => {
+  const { deleteExpense } = useExpensesContext();
 
   return (
     <StyledExpensesList>
-      {expenses.map((item) => (
-        <ExpensesItem expense={item} key={item.id} onClick={() => deleteExpense(item.id)} />
+      {expenses.map((expense) => (
+        <ExpensesItem
+          expense={expense}
+          key={expense.id}
+          onClick={() => deleteExpense(expense.id)}
+        />
       ))}
     </StyledExpensesList>
   );

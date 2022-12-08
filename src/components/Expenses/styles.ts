@@ -7,4 +7,16 @@ const StyledExpenses = styled.div`
   row-gap: 30px;
 `;
 
-export { StyledExpenses };
+const UnsuccessfulSearchText = styled.p`
+  place-self: center center;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #000000;
+`;
+
+export { StyledExpenses, UnsuccessfulSearchText };

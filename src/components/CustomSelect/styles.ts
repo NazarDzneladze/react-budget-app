@@ -1,5 +1,5 @@
+import { ICurrency } from "context/CurrencyContext/types";
 import { StylesConfig } from "react-select";
-import { ICurrency } from "../../types";
 
 export const styles: StylesConfig<ICurrency> = {
   singleValue: (baseStyles) => ({
@@ -8,13 +8,16 @@ export const styles: StylesConfig<ICurrency> = {
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: 12,
+
     color: "#000000",
   }),
   container: (baseStyles) => ({
     ...baseStyles,
-    borderRadius: 5,
+    justifySelf: "end",
+
     maxHeight: 30,
     maxWidth: 90,
-    justifySelf: "end",
+
+    borderRadius: 5,
   }),
 };

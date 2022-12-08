@@ -1,47 +1,34 @@
-import { Button } from "components/Button/Button";
-import { Input } from "components/Input/Input";
-import { useBudgetContext } from "context/BudgetContext/BudgetContext";
-import { useCurrenciesContext } from "context/CurrencyContext/CurrencyContext";
-import { useInput } from "hooks/useInput";
-import { useState } from "react";
+import { Button, Input } from "components";
+import { useCurrenciesContext, useBudgetContext } from "context";
+import { useInput, useToggle } from "hooks";
 import { StyledTotalBudget, TotalBudgetInfo } from "./styles";
 
 export const TotalBudget = () => {
   const currentBudget = useInput();
   const { currentCurrency } = useCurrenciesContext();
   const { budget, setNewBudget } = useBudgetContext();
-  const [isEditBudget, setIsEditBudget] = useState(false);
+  const [isEditBudget, setIsEditBudget] = useToggle();
 
   const handleIsEditBudget = () => {
     if (isEditBudget) {
-      setIsEditBudget((isEditBudget) => !isEditBudget);
       setNewBudget(+currentBudget.value);
-      console.log(budget);
+      setIsEditBudget();
     } else {
-      setIsEditBudget((isEditBudget) => !isEditBudget);
+      setIsEditBudget();
     }
   };
 
   return (
     <StyledTotalBudget>
       {isEditBudget ? (
-        <>
-          <Input {...currentBudget} placeholder="Enter  budget ..." type="number" $editBudget />
-          <Button onClick={handleIsEditBudget}>
-            Save
-          </Button>
-        </>
+        <Input {...currentBudget} placeholder="Enter  budget ..." type="number" $editBudget />
       ) : (
-        <>
-          <TotalBudgetInfo>
-            Budget: {budget}
-            {currentCurrency.value}
-          </TotalBudgetInfo>
-          <Button onClick={handleIsEditBudget}>
-            Edit
-          </Button>
-        </>
+        <TotalBudgetInfo>
+          Budget: {currentCurrency.value}
+          {budget}
+        </TotalBudgetInfo>
       )}
+      <Button onClick={handleIsEditBudget}>{isEditBudget ? "Save" : "Edit"}</Button>
     </StyledTotalBudget>
   );
 };

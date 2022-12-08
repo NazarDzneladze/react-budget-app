@@ -1,5 +1,4 @@
-import { useCurrenciesContext } from "context/CurrencyContext/CurrencyContext";
-import { useExpensesContext } from "context/ExpensesContext/ExpensesContext";
+import { useCurrenciesContext, useExpensesContext } from "context";
 import { SpentSoFarInfo, StyledSpentSoFarBudget } from "./styles";
 
 export const SpentSoFarBudget = () => {
@@ -11,8 +10,8 @@ export const SpentSoFarBudget = () => {
   return (
     <StyledSpentSoFarBudget>
       <SpentSoFarInfo>
-        Spent so far: {spentSoFar}
-        {currentCurrency.value}
+        Spent so far: {currentCurrency.value}
+        {spentSoFar}
       </SpentSoFarInfo>
     </StyledSpentSoFarBudget>
   );

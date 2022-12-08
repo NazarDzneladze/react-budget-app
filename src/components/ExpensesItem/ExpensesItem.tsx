@@ -1,7 +1,7 @@
-import { Badge } from "components/Badge/Badge";
-import { Button } from "components/Button/Button";
-import { IExpense } from "types";
-import { StyledExpensesItem } from "./styles";
+import { StyledExpensesItem, ExpenseText } from "./styles";
+import { ReactComponent as DeleteExpenseIcon } from "../../assets/icons/delete-expense.svg";
+import { Badge, Button } from "components";
+import { IExpense } from "context/ExpensesContext/types";
 
 interface IProps {
   expense: IExpense;
@@ -9,16 +9,12 @@ interface IProps {
 }
 
 export const ExpensesItem = ({ expense: { expenseCost, expenseName }, onClick }: IProps) => {
-	console.log();
-	
-  console.log(onClick);
-
   return (
     <StyledExpensesItem>
-      {expenseName}
+      <ExpenseText>{expenseName}</ExpenseText>
       <Badge>{expenseCost}</Badge>
       <Button $deleteExpense onClick={onClick}>
-        X
+        <DeleteExpenseIcon />
       </Button>
     </StyledExpensesItem>
   );

@@ -1,4 +1,4 @@
-import { useCurrenciesContext } from "context/CurrencyContext/CurrencyContext";
+import { useCurrenciesContext } from "context";
 import { ReactNode } from "react";
 import { StyledBadge } from "./styles";
 

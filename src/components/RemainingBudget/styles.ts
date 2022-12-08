@@ -1,16 +1,34 @@
 import styled from "styled-components";
-import { StyledTotalBudget, TotalBudgetInfo } from "components/TotalBudget/styles";
+import { StyledTotalBudget } from "components/TotalBudget/styles";
 
-const StyledRemainingBudget = styled(StyledTotalBudget)`
-  background-color: #ccd5ff;
+interface IProps {
+  $isOverSpending: boolean;
+}
+
+const StyledRemainingBudget = styled(StyledTotalBudget)<IProps>`
+  background-color: ${({ $isOverSpending }) => ($isOverSpending ? "#FF0000" : "#CCD5FF")};
+
+  transition: 0.5s;
 `;
 
-const RemainingBudgetInfo = styled.p`
+const RemainingText = styled.p`
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+
+  color: #000000;
 `;
 
-export { StyledRemainingBudget, RemainingBudgetInfo };
+const OverSpendingText = styled.p`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #ffffff;
+`;
+
+export { StyledRemainingBudget, RemainingText, OverSpendingText };

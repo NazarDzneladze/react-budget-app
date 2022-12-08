@@ -20,8 +20,8 @@ const getExpenseCostValidation = () => {
       message: "Maximum 5 characters required",
     },
     min: {
-      value: 1,
-      message: "The cost cannot be less than 1. Please try again.",
+      value: 0.1,
+      message: "The cost cannot be less than 0.1. Please try again.",
     },
   };
 };

@@ -9,7 +9,6 @@ const StyledApp = styled.div`
 
   width: clamp(320px, 100%, 425px);
   padding: 30px 20px 53px;
-  height: auto;
 
   background-color: #ffffff;
 `;

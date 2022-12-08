@@ -39,9 +39,9 @@ const StyledButton = styled.button<IProps>`
   ${({ $deleteExpense }) =>
     $deleteExpense &&
     css`
-      padding: 0;
+      place-self: center;
 
-      color: #c884a6;
+      padding: 0;
     `}
 `;
 

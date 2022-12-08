@@ -22,4 +22,4 @@ const TotalBudgetInfo = styled.p`
   line-height: 24px;
 `;
 
-export { StyledTotalBudget ,TotalBudgetInfo};
+export { StyledTotalBudget, TotalBudgetInfo };
